@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agendamentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #fc="ngForm" (ngSubmit)="onsubmit(fc)">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="agendamento.nome" name="nome" required></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Horário</ion-label>
+      <ion-select placeholder="Selec um Horario" [(ngModel)]="agendamento.horario" name="horario" required>
+        <ion-select-option value="07:00 às 09:00">07:00 às 09:00</ion-select-option>
+        <ion-select-option value="10:00 às 13:00">10:00 às 13:00</ion-select-option>
+        <ion-select-option value="14:00 às 17:00">14:00 às 17:00</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Procedimento</ion-label>
+      <ion-select placeholder="Selec um Serviço" [(ngModel)]="agendamento.procedimento" name="procedimento" required>
+        <ion-select-option value="Massagem">Massagem</ion-select-option>
+        <ion-select-option value="Reflexologia">Reflexologia</ion-select-option>
+        <ion-select-option value="Laserterapia">Laserterapia</ion-select-option>
+        <ion-select-option value="Depilacao">Depilação</ion-select-option>
+        <ion-select-option value="Manicure">Manicure</ion-select-option>
+        <ion-select-option value="Pedicure">Pedicure</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="relative">Data</ion-label>
+          <ion-input type="date" [(ngModel)]="agendamento.data" name="data" required></ion-input>
+
+        </ion-item>
+
+
+    <ion-item>
+    <ion-label>Atendimento em Domicilio</ion-label>
+    <ion-select placeholder="Homecare" [(ngModel)]="agendamento.homecare" name="homecare" required>
+      <ion-select-option value="Sim">Sim</ion-select-option>
+      <ion-select-option value="Nao">Não</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Descreva a Solicitação</ion-label>
+      <ion-input type="text" [(ngModel)]="agendamento.mensagem" name="mensagem" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input type="tel" [(ngModel)]="agendamento.telefone" maxlength="10" name="telefone" required></ion-input>
+    </ion-item>
+
+
+    <ion-item lines="none">
+      <ion-button type="submit" color="primary" routerLink="/">Salvar</ion-button>
+      <ion-button type="reset" color="danger" routerLink="/">Cancelar</ion-button>
+    </ion-item> 
+  </form>
+</ion-content>

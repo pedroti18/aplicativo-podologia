@@ -1,0 +1,7 @@
+{
+  "name": "podologiadm",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
